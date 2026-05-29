@@ -1,0 +1,106 @@
+# web-domain5
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hướng dẫn 5 bước đọc và phân tích cấu trúc URL</title>
+  <style>
+    /* CSS nội bộ tối ưu hóa giao diện danh sách hướng dẫn */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      line-height: 1.7;
+      background-color: #f4f7f6;
+      color: #333;
+      margin: 0;
+      padding: 30px 20px;
+    }
+    .guide-box {
+      max-width: 700px;
+      margin: 0 auto;
+      background: #ffffff;
+      padding: 35px;
+      border-radius: 12px;
+      box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    }
+    h1 {
+      color: #2c3e50;
+      font-size: 24px;
+      text-align: center;
+      margin-top: 0;
+      border-bottom: 2px solid #3498db;
+      padding-bottom: 15px;
+    }
+    .demo-url {
+      background-color: #eef2f7;
+      padding: 12px;
+      border-radius: 6px;
+      font-family: monospace;
+      font-size: 15px;
+      color: #c0392b;
+      text-align: center;
+      margin: 20px 0;
+    }
+    /* Tùy biến danh sách <ol> trông hiện đại hơn */
+    ol {
+      padding-left: 20px;
+    }
+    li {
+      margin-bottom: 18px;
+      padding-left: 8px;
+    }
+    li strong {
+      color: #2980b9;
+      font-size: 16px;
+    }
+    .note-tip {
+      background-color: #fff9db;
+      border-left: 4px solid #f59f00;
+      padding: 12px 15px;
+      border-radius: 4px;
+      margin-top: 25px;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="guide-box">
+    <header>
+      <h1>Quy Trình 5 Bước Đọc Hiểu Cấu Trúc URL</h1>
+      <p style="color: #666; text-align: center;">Hãy cùng phân tích đường dẫn mẫu dưới đây qua từng bước:</p>
+      <div class="demo-url">https://example.com/products/list?page=2#top</div>
+    </header>
+
+    <main>
+      <ol>
+        <li>
+          <strong>Nhận diện Giao thức (Protocol):</strong> 
+          Nhìn vào phần đầu tiên trước dấu <code>://</code>. Ở ví dụ này là <code>https</code> (hoặc <code>http</code>), quyết định cách trình duyệt và máy chủ mã hóa, truyền tải dữ liệu an toàn một cách bảo mật.
+        </li>
+        <li>
+          <strong>Xác định Tên miền (Domain Name):</strong> 
+          Đọc chuỗi ký tự ngay sau dấu <code>://</code> cho đến khi gặp dấu gạch chéo <code>/</code> đầu tiên. Ở đây là <code>example.com</code>, nó chính là "địa chỉ nhà" định danh để tìm ra máy chủ của website.
+        </li>
+        <li>
+          <strong>Tra cứu Đường dẫn (Path):</strong> 
+          Tìm phân đoạn bắt đầu từ dấu gạch chéo <code>/</code> sau tên miền đến trước dấu chấm hỏi <code>?</code> hoặc dấu thăng <code>#</code>. Khối <code>/products/list</code> cho biết bạn đang truy cập vào thư mục hoặc tệp tin cụ thể nào trên hệ thống.
+        </li>
+        <li>
+          <strong>Phân tích Tham số truy vấn (Query String):</strong> 
+          Kiểm tra phần bắt đầu bằng dấu chấm hỏi <code>?</code>. Cụm <code>?page=2</code> chứa các cặp khóa-giá trị dùng để lọc, phân trang hoặc truyền dữ liệu động cho máy chủ xử lý.
+        </li>
+        <li>
+          <strong>Định vị Phân đoạn nội bộ (Fragment/Anchor):</strong> 
+          Xem ký tự cuối cùng bắt đầu từ dấu thăng <code>#</code>. Khối <code>#top</code> giúp trình duyệt tự động cuộn màn hình đến đúng vị trí thẻ ID cụ thể được đánh dấu sẵn trong trang web mà không cần tải lại trang.
+        </li>
+      </ol>
+
+      <div class="note-tip">
+         <strong>Mẹo nhỏ thực hành:</strong> Không phải URL nào cũng có đủ cả 5 thành phần trên, nhưng bắt buộc phải có <b>Giao thức</b> và <b>Tên miền</b> thì trình duyệt mới có thể tìm kiếm và truy cập được website!
+      </div>
+    </main>
+  </div>
+
+  </body>
+</html>
